@@ -1,0 +1,50 @@
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+#AC_PREREQ([2.65])
+AC_INIT([stp], [1.0], [lvpengcheng6300@gmail.com])
+AC_CONFIG_SRCDIR([include/bitmap.h])
+AC_CONFIG_HEADERS([config.h])
+AM_INIT_AUTOMAKE([no-dependencies])
+# Checks for programs.
+:${CFLAGS="-g -O0 -Werror"}
+AC_PROG_CC
+AC_PROG_RANLIB
+AM_PROG_CC_C_O
+# Checks for libraries.
+AC_SEARCH_LIBS(pthread_create,pthread,[],[AC_MSG_ERROR([pthread library not found!])],[])
+AC_MSG_CHECKING([__sync_fetch_and_add])
+AC_LINK_IFELSE([AC_LANG_PROGRAM([
+ int main(void) { return __sync_fetch_and_add((int *)0,0);}
+ ])],
+ [AC_MSG_RESULT([yes])],
+ [AC_MSG_RESULT([no])]
+)
+# Checks for header files.
+AC_CHECK_HEADERS([fcntl.h limits.h stdint.h stdlib.h string.h unistd.h sys/mman.h pthread.h sys/types.h semaphore.h sys/stat.h])
+
+subdirs="lib test" 
+
+# Checks for typedefs, structures, and compiler characteristics.
+AC_C_INLINE
+AC_TYPE_INT16_T
+AC_TYPE_INT32_T
+AC_TYPE_INT64_T
+AC_TYPE_INT8_T
+AC_TYPE_MODE_T
+AC_TYPE_OFF_T
+AC_TYPE_SIZE_T
+AC_TYPE_UINT16_T
+AC_TYPE_UINT32_T
+AC_TYPE_UINT64_T
+AC_TYPE_UINT8_T
+
+AC_SUBST(subdirs)
+# Checks for library functions.
+AC_FUNC_MMAP
+AC_CHECK_FUNCS([ftruncate getpagesize memset munmap strerror calloc free])
+
+AC_CONFIG_FILES([Makefile
+ 		lib/Makefile
+		test/Makefile])
+AC_OUTPUT

@@ -1,0 +1,32 @@
+autoscan: warning: missing AC_CHECK_FUNCS([gettimeofday]) wanted by: 
+	test/test_btree.c:35
+	test/test_btree.c:40
+autoscan: warning: missing AC_CHECK_FUNCS([memmove]) wanted by: 
+	engine/block_db.cc:143
+	engine/block_db.cc:277
+autoscan: warning: missing AC_CHECK_FUNCS([mkdir]) wanted by: 
+	lib/stp_open.c:629
+	engine/block_db.cc:47
+autoscan: warning: missing AC_CHECK_HEADERS([sys/time.h]) wanted by: 
+	test/test_btree.c:27
+autoscan: warning: missing AC_CHECK_MEMBERS([struct stat.st_blksize]) wanted by: 
+	lib/stp_rw.c:153
+autoscan: warning: missing AC_CHECK_MEMBERS([struct stat.st_rdev]) wanted by: 
+	lib/stp_rw.c:151
+autoscan: warning: missing AC_HEADER_STDBOOL wanted by: 
+	engine/slice.h:31
+	engine/slice.h:46
+	engine/slice.h:51
+	engine/status.h:33
+	engine/status.h:34
+	engine/status.h:33
+	engine/status.h:34
+	engine/status.h:33
+	engine/status.h:34
+autoscan: warning: missing AC_PROG_CXX wanted by: 
+	engine/btree_index_file.cc
+	engine/data_file.cc
+	engine/map_index_file.cc
+	engine/block_db.cc
+autoscan: warning: missing AC_STRUCT_ST_BLOCKS wanted by: 
+	lib/stp_rw.c:152
