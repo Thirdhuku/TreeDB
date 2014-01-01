@@ -1,4 +1,4 @@
-TreeDB
+TreeDB v1.0
 ======
 
 a fast key-value storage engine based on Append-Only B+tree
@@ -15,3 +15,7 @@ The typical key-value storage engine based on B+tree is the [Kyoto Cabinet TreeD
 
 ### Document
 TODO
+
+
+### Future
+FastDB v2.0 use buffer-tree.
